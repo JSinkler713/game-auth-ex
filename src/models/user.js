@@ -2,7 +2,6 @@ const REACT_APP_API_URL = "http://localhost:3001/api/v1"
 
 export default class UserModel {
   static create(data) {
-    // TODO: complete this function
     return fetch(`${REACT_APP_API_URL}/auth/register`, {
       method: "POST",
       headers: {
@@ -13,7 +12,6 @@ export default class UserModel {
   }
   
   static login(credentials) {
-    // TODO: complete this function
     return fetch(`${REACT_APP_API_URL}/auth/login`, {
       method: "POST",
       headers: {
@@ -25,7 +23,9 @@ export default class UserModel {
   }
 
   static logout() {
-    // TODO: complete this function
-    // Remember to add authorization headers
+    return fetch(`${REACT_APP_API_URL}/auth/logout`, {
+      method: "DELETE",
+      credentials: 'include'
+    })
   }
 }
