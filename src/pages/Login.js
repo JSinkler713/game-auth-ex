@@ -1,4 +1,5 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
+import UserModel from '../models/user'
 
 class Login extends Component {
   state = {
@@ -13,7 +14,19 @@ class Login extends Component {
   }
 
   handleSubmit = (event) => {
-    // TODO: complete this function
+    event.preventDefault()
+
+    UserModel.login(this.state)
+      .then(data => {
+        console.log(data)
+        // TODO: FIX IT
+        if (!data.data) {
+          return false
+        }
+        this.props.storeUser(data.data)
+        this.props.history.push('/profile')
+      })
+      .catch(err => console.log(err))
   }
 
   

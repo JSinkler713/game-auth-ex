@@ -14,7 +14,14 @@ export default class UserModel {
   
   static login(credentials) {
     // TODO: complete this function
-    // Remember to add authorization headers
+    return fetch(`${REACT_APP_API_URL}/auth/login`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      credentials: 'include',
+      body: JSON.stringify(credentials)
+    }).then(res => res.json())
   }
 
   static logout() {

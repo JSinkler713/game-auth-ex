@@ -15,6 +15,13 @@ export default (props) => (
     <Route path="/profile" component={ Profile } />
     <Route path="/register" component={ Register } />
     {/* Route for Login will be added here */}
+    <Route path="/login" render={ (routeComponentProps) => {
+      return <Login 
+               { ...routeComponentProps }
+               currentUser={ props.currentUser }
+               storeUser={ props.storeUser }
+             />
+    }} />
     <Route path="/games/new" component={ NewGame } />
     <Route path='/games/:id' component={ GameShow } />
     <Route path='/games' component={ GameList } />
