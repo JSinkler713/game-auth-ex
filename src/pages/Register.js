@@ -1,4 +1,5 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
+import UserModel from '../models/user'
 
 class Register extends Component {
   state = {
@@ -14,8 +15,23 @@ class Register extends Component {
     })
   }
 
-  handleSubmit = () => {
+  handleSubmit = (event) => {
     // TODO: complete this function
+    event.preventDefault()
+
+    UserModel.create(this.state)
+      .then(data => {
+        console.log(data)
+        this.setState({
+          name: '',
+          email: '',
+          password: '',
+          password2: ''
+        })
+        // this.props.'history' is one of the router props passed
+        // by <Route />. The others are 'match' and 'location'
+        this.props.history.push('/login')
+      })
   }
 
   render() {

@@ -36,7 +36,6 @@ class Login extends Component {
             <label htmlFor="password">Password</label>
             <input 
               onChange={this.handleChange} 
-              className="form-control form-control-lg" 
               type="password" 
               id="password" 
               name="password" 
