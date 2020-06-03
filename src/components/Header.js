@@ -12,6 +12,8 @@ const Header = () => {
         <ul>
           <li><Link to={'/games'}>All Games</Link></li>
           <li><Link to={'/games/new'}>Add New Game</Link></li>
+          <li><Link to={'/register'}>Register</Link></li>
+          <li><Link to={'/login'}>Login</Link></li>
         </ul>
       </div>
     </header>

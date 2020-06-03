@@ -5,10 +5,16 @@ import Home from '../pages/Home'
 import GameList from '../pages/GameList'
 import GameShow from '../pages/GameShow'
 import NewGame from '../pages/NewGame'
+import Profile from '../pages/Profile'
+import Login from '../pages/Login'
+import Register from '../pages/Register'
 
-export default (
+export default (props) => (
   <Switch>
     <Route exact path='/' component={ Home } />
+    <Route path="/profile" component={ Profile } />
+    <Route path="/register" component={ Register } />
+    {/* Route for Login will be added here */}
     <Route path="/games/new" component={ NewGame } />
     <Route path='/games/:id' component={ GameShow } />
     <Route path='/games' component={ GameList } />
